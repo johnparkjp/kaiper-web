@@ -1,0 +1,155 @@
+{
+  "meta": {
+    "title": "KAIPER — Cooling Solutions for Extreme Heat",
+    "description": "Kaiper protects human performance in extreme heat environments with advanced cooling solutions."
+  },
+  "nav": {
+    "problem": "Why Cooling",
+    "product": "Products",
+    "vision": "Vision",
+    "business": "For Business",
+    "contact": "Contact"
+  },
+  "hero": {
+    "headline": "Defying Heat,\nEmpowering Human\nPerformance",
+    "subline": "Break into, Break through.",
+    "cta": "Explore Products",
+    "scroll": "Scroll to explore"
+  },
+  "problem": {
+    "badge": "WHY COOLING",
+    "title": "Why Cooling?",
+    "subtitle": "Extreme heat is no longer a seasonal event. As the planet gets hotter every year, outdoor workers are the first to suffer.",
+    "stats": {
+      "heatDays": {
+        "value": "28.5",
+        "label": "Heat wave days per year",
+        "suffix": " days"
+      },
+      "heatstroke": {
+        "value": "2800",
+        "label": "Annual heatstroke patients",
+        "suffix": "+"
+      },
+      "workers": {
+        "value": "4.5",
+        "label": "Outdoor workers (millions)",
+        "suffix": "M+"
+      }
+    },
+    "cards": {
+      "crisis": {
+        "title": "Climate Crisis",
+        "description": "Heat wave days have doubled in the past decade. Urban heat islands combined with climate change are rapidly deteriorating outdoor working conditions."
+      },
+      "vulnerability": {
+        "title": "Human Vulnerability",
+        "description": "Human thermoregulation has limits. Above 38°C, concentration drops by 50% and heatstroke risk increases exponentially."
+      },
+      "gap": {
+        "title": "Solution Gap",
+        "description": "Existing cooling products fail to deliver performance, convenience, and portability together. Field workers deserve a real solution."
+      }
+    }
+  },
+  "product": {
+    "badge": "PRODUCTS",
+    "title": "Product Lineup",
+    "subtitle": "Kaiper's cooling technology that maintains performance even in extreme environments",
+    "fan": {
+      "name": "3in1 Waist Fan",
+      "tagline": "One device, three modes",
+      "description": "Waist-mounted cooling fan. Doubles as a power bank for smartphone charging.",
+      "specs": {
+        "mode": {
+          "label": "3-in-1 Mode",
+          "value": "Fan + Neckband + Power Bank"
+        },
+        "battery": {
+          "label": "Battery",
+          "value": "4,500mAh"
+        },
+        "charging": {
+          "label": "Charging",
+          "value": "USB-C Fast Charging"
+        },
+        "control": {
+          "label": "Speed Control",
+          "value": "Slider Stepless Control"
+        }
+      }
+    },
+    "kit": {
+      "name": "Cooling Kit",
+      "description": "Complete cooling kit including arm sleeves, cool towel hoodie, ice pack, and apparel",
+      "items": {
+        "sleeves": "Arm Sleeves",
+        "hoodie": "Cool Towel Hoodie",
+        "icePack": "Ice Pack",
+        "wear": "Cooling Wear"
+      }
+    },
+    "cta": "Learn More"
+  },
+  "vision": {
+    "badge": "VISION",
+    "title": "Energy flows.\nFreedom follows.",
+    "subtitle": "Kaiper is more than a product — it's a movement to reclaim human freedom in extreme environments.",
+    "values": {
+      "optimize": {
+        "title": "Optimize",
+        "description": "Temperature, energy, efficiency — optimizing every variable of human performance."
+      },
+      "synchronize": {
+        "title": "Synchronize",
+        "description": "Creating perfect sync between body and tool, people and environment."
+      },
+      "mobilize": {
+        "title": "Mobilize",
+        "description": "Freedom to move anywhere. Maximizing field mobility."
+      }
+    },
+    "story": {
+      "title": "Tactical Initiator",
+      "description": "Kaiper is inspired by the Caper Genre — stories of breaking established order and designing new flows. We are tactical pioneers who break through the barrier of extreme heat to liberate human performance."
+    }
+  },
+  "business": {
+    "badge": "FOR BUSINESS",
+    "title": "Enterprise Solutions",
+    "subtitle": "Customized cooling solutions to tackle heat stress in industrial environments",
+    "segments": {
+      "construction": {
+        "title": "Construction",
+        "description": "Comprehensive cooling solutions for outdoor construction workers"
+      },
+      "logistics": {
+        "title": "Logistics",
+        "description": "Improving thermal conditions in warehouses and delivery operations"
+      },
+      "manufacturing": {
+        "title": "Manufacturing",
+        "description": "Protecting worker safety in high-temperature manufacturing environments"
+      },
+      "agriculture": {
+        "title": "Agriculture",
+        "description": "Maintaining productivity during extended outdoor farming"
+      }
+    },
+    "cta": "Request Bulk Quote",
+    "ctaDescription": "Get customized quotes and enterprise discounts."
+  },
+  "cta": {
+    "title": "Be the first to hear what's new",
+    "subtitle": "Get the latest on new products, promotions, and brand news from Kaiper.",
+    "placeholder": "Email address",
+    "button": "Subscribe",
+    "privacy": "By subscribing, you agree to our Privacy Policy."
+  },
+  "footer": {
+    "company": "SCG Solutions Co, Ltd.",
+    "rights": "All rights reserved.",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy"
+  }
+}

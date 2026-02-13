@@ -1,0 +1,155 @@
+{
+  "meta": {
+    "title": "KAIPER — 극한 더위를 이기는 쿨링 솔루션",
+    "description": "Kaiper는 극한 더위 환경에서 인간 퍼포먼스를 보호하는 쿨링 솔루션 브랜드입니다."
+  },
+  "nav": {
+    "problem": "왜 쿨링인가",
+    "product": "제품",
+    "vision": "비전",
+    "business": "기업 솔루션",
+    "contact": "문의하기"
+  },
+  "hero": {
+    "headline": "Defying Heat,\nEmpowering Human\nPerformance",
+    "subline": "Break into, Break through.",
+    "cta": "제품 알아보기",
+    "scroll": "스크롤하여 더 보기"
+  },
+  "problem": {
+    "badge": "WHY COOLING",
+    "title": "왜 쿨링인가",
+    "subtitle": "폭염은 더 이상 계절 이벤트가 아닙니다. 매년 더 뜨거워지는 지구, 가장 먼저 무너지는 건 현장의 사람입니다.",
+    "stats": {
+      "heatDays": {
+        "value": "28.5",
+        "label": "연간 폭염 일수",
+        "suffix": "일"
+      },
+      "heatstroke": {
+        "value": "2800",
+        "label": "연간 온열질환 환자 수",
+        "suffix": "명+"
+      },
+      "workers": {
+        "value": "450",
+        "label": "옥외 노동자 (만 명)",
+        "suffix": "만+"
+      }
+    },
+    "cards": {
+      "crisis": {
+        "title": "Climate Crisis",
+        "description": "지난 10년간 폭염 일수가 2배 증가. 도시 열섬현상과 기후 위기가 결합되며 야외 노동 환경이 급격히 악화되고 있습니다."
+      },
+      "vulnerability": {
+        "title": "Human Vulnerability",
+        "description": "인간의 체온 조절 능력은 한계가 있습니다. 38°C 이상에서 집중력은 50% 저하, 열사병 위험은 기하급수적으로 증가합니다."
+      },
+      "gap": {
+        "title": "Solution Gap",
+        "description": "기존 쿨링 제품은 성능·편의성·휴대성을 모두 충족하지 못합니다. 현장 근로자에게 진짜 필요한 솔루션이 없었습니다."
+      }
+    }
+  },
+  "product": {
+    "badge": "PRODUCTS",
+    "title": "제품 라인업",
+    "subtitle": "극한 환경에서도 퍼포먼스를 유지하는 Kaiper의 쿨링 기술",
+    "fan": {
+      "name": "3in1 Waist Fan",
+      "tagline": "하나의 디바이스, 세 가지 모드",
+      "description": "허리 장착형 쿨링 팬. 배터리 겸용으로 스마트폰 충전까지.",
+      "specs": {
+        "mode": {
+          "label": "3-in-1 모드",
+          "value": "팬 + 넥밴드 + 보조배터리"
+        },
+        "battery": {
+          "label": "배터리",
+          "value": "4,500mAh"
+        },
+        "charging": {
+          "label": "충전",
+          "value": "USB-C 급속충전"
+        },
+        "control": {
+          "label": "풍속 조절",
+          "value": "슬라이더 무단 조절"
+        }
+      }
+    },
+    "kit": {
+      "name": "Cooling Kit",
+      "description": "쿨토시, 쿨타월후디, 아이스백을 포함한 종합 쿨링 키트",
+      "items": {
+        "sleeves": "쿨토시",
+        "hoodie": "쿨타월후디",
+        "icePack": "아이스백",
+        "wear": "쿨링 의류"
+      }
+    },
+    "cta": "자세히 보기"
+  },
+  "vision": {
+    "badge": "VISION",
+    "title": "Energy flows.\nFreedom follows.",
+    "subtitle": "Kaiper는 단순한 제품이 아닌, 극한의 환경에서 인간의 자유를 되찾는 무브먼트입니다.",
+    "values": {
+      "optimize": {
+        "title": "Optimize",
+        "description": "체온·에너지·효율, 인간 퍼포먼스의 모든 변수를 최적화합니다."
+      },
+      "synchronize": {
+        "title": "Synchronize",
+        "description": "몸과 도구, 사람과 환경 사이의 완벽한 싱크를 만듭니다."
+      },
+      "mobilize": {
+        "title": "Mobilize",
+        "description": "어디서든 움직일 수 있는 자유. 현장의 모빌리티를 극대화합니다."
+      }
+    },
+    "story": {
+      "title": "Tactical Initiator",
+      "description": "Kaiper(케이퍼)는 Caper Genre — 기존 질서를 무너뜨리고 새로운 흐름을 설계하는 장르에서 영감을 받았습니다. 우리는 극한의 더위라는 장벽을 뚫고, 인간의 퍼포먼스를 해방하는 전술적 선구자입니다."
+    }
+  },
+  "business": {
+    "badge": "FOR BUSINESS",
+    "title": "기업 솔루션",
+    "subtitle": "산업 현장의 열 스트레스를 해결하는 맞춤형 쿨링 솔루션",
+    "segments": {
+      "construction": {
+        "title": "건설",
+        "description": "옥외 건설 현장 근로자를 위한 종합 쿨링 솔루션"
+      },
+      "logistics": {
+        "title": "물류",
+        "description": "물류센터·배송 현장의 열 환경 개선"
+      },
+      "manufacturing": {
+        "title": "제조",
+        "description": "고온 제조 환경의 작업자 안전 보호"
+      },
+      "agriculture": {
+        "title": "농업",
+        "description": "장시간 야외 농작업의 생산성 유지"
+      }
+    },
+    "cta": "대량 구매 문의",
+    "ctaDescription": "맞춤형 견적과 기업 할인에 대해 상담해 드립니다."
+  },
+  "cta": {
+    "title": "새로운 소식을 가장 먼저 받아보세요",
+    "subtitle": "Kaiper의 신제품, 프로모션, 브랜드 소식을 이메일로 전해드립니다.",
+    "placeholder": "이메일 주소",
+    "button": "구독하기",
+    "privacy": "구독 시 개인정보처리방침에 동의합니다."
+  },
+  "footer": {
+    "company": "SCG Solutions Co, Ltd.",
+    "rights": "All rights reserved.",
+    "terms": "이용약관",
+    "privacy": "개인정보처리방침"
+  }
+}
