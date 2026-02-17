@@ -1,9 +1,10 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useTranslations, useLocale } from 'next-intl';
 import { useRouter, usePathname, Link } from '@/i18n/navigation';
+import Image from 'next/image';
 import { NAV_LINKS } from '@/lib/constants';
 
 const SECTION_IDS = NAV_LINKS.map((l) => l.key);
@@ -99,7 +100,6 @@ export default function Header() {
       );
     }
 
-    // On non-home pages, hash links go back to home
     return (
       <Link
         key={link.key}
@@ -121,93 +121,90 @@ export default function Header() {
   }`;
 
   return (
-    <motion.header
-      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
-        scrolled
-          ? 'bg-kaiper-black/80 backdrop-blur-xl border-b border-cool-gray-50/30'
-          : 'bg-transparent'
-      }`}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-    >
-      <div className="mx-auto max-w-[1280px] px-6 lg:px-8">
-        <div className="flex h-16 lg:h-20 items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="text-xl lg:text-2xl font-bold tracking-wider">
-            KAIPER
-          </Link>
-
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
-            {NAV_LINKS.map((link) => renderNavLink(link, false))}
-            <Link href="/shop" className={shopDesktopClass}>
-              {t('shop')}
-              {shopIsActive && (
-                <motion.span
-                  layoutId="nav-dot"
-                  className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-accent-blue"
-                  transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                />
-              )}
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 border-b ${
+          scrolled
+            ? 'bg-[rgba(0,0,0,0.95)] border-cool-gray-50/30'
+            : 'bg-transparent border-transparent'
+        }`}
+      >
+        <div className="mx-auto max-w-[1280px] px-6 lg:px-8">
+          <div className="flex h-16 lg:h-20 items-center justify-between">
+            {/* Logo */}
+            <Link href="/" className="block">
+              <Image
+                src="/kaiper_logo_en_white.svg"
+                alt="KAIPER"
+                width={120}
+                height={32}
+                priority
+              />
             </Link>
-          </nav>
 
-          {/* Right side */}
-          <div className="flex items-center gap-4">
-            <button
-              onClick={switchLocale}
-              className="text-sm text-cool-gray-30 hover:text-kaiper-white transition-colors px-2 py-1 border border-cool-gray-50 rounded"
-            >
-              {locale === 'ko' ? 'EN' : 'KO'}
-            </button>
+            {/* Desktop Nav */}
+            <nav className="hidden md:flex items-center gap-8">
+              {NAV_LINKS.map((link) => renderNavLink(link, false))}
+              <Link href="/shop" className={shopDesktopClass}>
+                {t('shop')}
+                {shopIsActive && (
+                  <motion.span
+                    layoutId="nav-dot"
+                    className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-accent-blue"
+                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                  />
+                )}
+              </Link>
+            </nav>
 
-            {/* Mobile menu button */}
-            <button
-              onClick={() => setMobileOpen(!mobileOpen)}
-              className="md:hidden flex flex-col gap-1.5 p-2"
-              aria-label="Menu"
-            >
-              <motion.span
-                className="block w-5 h-0.5 bg-kaiper-white"
-                animate={mobileOpen ? { rotate: 45, y: 4 } : { rotate: 0, y: 0 }}
-              />
-              <motion.span
-                className="block w-5 h-0.5 bg-kaiper-white"
-                animate={mobileOpen ? { opacity: 0 } : { opacity: 1 }}
-              />
-              <motion.span
-                className="block w-5 h-0.5 bg-kaiper-white"
-                animate={mobileOpen ? { rotate: -45, y: -4 } : { rotate: 0, y: 0 }}
-              />
-            </button>
+            {/* Right side */}
+            <div className="flex items-center gap-4">
+              <button
+                onClick={switchLocale}
+                className="text-sm text-cool-gray-30 hover:text-kaiper-white transition-colors px-2 py-1 border border-cool-gray-50 rounded"
+              >
+                {locale === 'ko' ? 'EN' : 'KO'}
+              </button>
+
+              {/* Mobile menu button */}
+              <button
+                onClick={() => setMobileOpen(!mobileOpen)}
+                className="md:hidden relative w-9 h-9 flex items-center justify-center"
+                aria-label="Menu"
+              >
+                <motion.span
+                  className="absolute w-5 h-0.5 bg-kaiper-white"
+                  animate={mobileOpen ? { rotate: 45, y: 0 } : { rotate: 0, y: -4 }}
+                />
+                <motion.span
+                  className="absolute w-5 h-0.5 bg-kaiper-white"
+                  animate={mobileOpen ? { opacity: 0 } : { opacity: 1 }}
+                />
+                <motion.span
+                  className="absolute w-5 h-0.5 bg-kaiper-white"
+                  animate={mobileOpen ? { rotate: -45, y: 0 } : { rotate: 0, y: 4 }}
+                />
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </header>
 
-      {/* Mobile Nav — full-screen overlay */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.nav
-            className="md:hidden fixed inset-0 top-16 bg-kaiper-black/95 backdrop-blur-xl border-t border-cool-gray-50/30"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            <div className="px-6 py-8 flex flex-col gap-6">
-              {NAV_LINKS.map((link) => renderNavLink(link, true))}
-              <Link
-                href="/shop"
-                onClick={closeMobile}
-                className={shopMobileClass}
-              >
-                {t('shop')}
-              </Link>
-            </div>
-          </motion.nav>
-        )}
-      </AnimatePresence>
-    </motion.header>
+      {/* Mobile Nav — rendered outside header to avoid stacking issues */}
+      {mobileOpen && (
+        <div className="md:hidden fixed inset-0 top-16 z-50 bg-kaiper-black border-t border-cool-gray-50/30">
+          <div className="px-6 py-8 flex flex-col gap-6">
+            {NAV_LINKS.map((link) => renderNavLink(link, true))}
+            <Link
+              href="/shop"
+              onClick={closeMobile}
+              className={shopMobileClass}
+            >
+              {t('shop')}
+            </Link>
+          </div>
+        </div>
+      )}
+    </>
   );
 }

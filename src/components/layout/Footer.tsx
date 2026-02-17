@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { BRAND, SOCIAL_LINKS } from '@/lib/constants';
 
@@ -12,9 +13,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Brand */}
           <div>
-            <h3 className="text-xl font-bold tracking-wider mb-3">
-              {BRAND.name}
-            </h3>
+            <Image
+              src="/kaiper_logo_en_white.svg"
+              alt="KAIPER"
+              width={100}
+              height={27}
+              className="mb-3"
+            />
             <p className="text-sm text-cool-gray-40 leading-relaxed">
               {BRAND.vision}
             </p>
