@@ -34,3 +34,8 @@ export const SOCIAL_LINKS = {
   instagram: 'https://instagram.com/kaiper.official',
   kakao: 'https://pf.kakao.com/_kaiper',
 } as const;
+
+export const CONTACT_INFO = {
+  email: 'contact@kaiper.io',
+  kakao: 'https://pf.kakao.com/_kaiper',
+} as const;

@@ -8,7 +8,8 @@
     "product": "Products",
     "vision": "Vision",
     "business": "For Business",
-    "contact": "Contact"
+    "contact": "Contact",
+    "shop": "Shop"
   },
   "hero": {
     "headline": "Defying Heat,\nEmpowering Human\nPerformance",
@@ -145,6 +146,88 @@
     "placeholder": "Email address",
     "button": "Subscribe",
     "privacy": "By subscribing, you agree to our Privacy Policy."
+  },
+  "shop": {
+    "hero": {
+      "badge": "SHOP",
+      "title": "The New Standard of Cooling",
+      "subtitle": "Discover Kaiper products designed to protect performance in extreme heat."
+    },
+    "fan": {
+      "badge": "FLAGSHIP",
+      "name": "3in1 Waist Fan",
+      "tagline": "One device, three modes",
+      "description": "Waist-mounted cooling fan that doubles as a power bank for smartphone charging. Stay cool anywhere — from construction sites to outdoor adventures.",
+      "specs": {
+        "mode": {
+          "label": "3-in-1 Mode",
+          "value": "Fan + Neckband + Power Bank"
+        },
+        "battery": {
+          "label": "Battery",
+          "value": "4,500mAh"
+        },
+        "charging": {
+          "label": "Charging",
+          "value": "USB-C Fast Charging"
+        },
+        "control": {
+          "label": "Speed Control",
+          "value": "Slider Stepless Control"
+        },
+        "weight": {
+          "label": "Weight",
+          "value": "280g"
+        },
+        "noise": {
+          "label": "Noise",
+          "value": "Under 35dB"
+        }
+      },
+      "features": {
+        "versatile": {
+          "title": "Versatile",
+          "description": "Multiple wearing options: waist, desk, neckband and more"
+        },
+        "durable": {
+          "title": "Durable",
+          "description": "IP54 dust and water resistant for field use"
+        },
+        "portable": {
+          "title": "Portable",
+          "description": "Ultra-light 280g with clip-on detachable design"
+        }
+      }
+    },
+    "kit": {
+      "badge": "COOLING KIT",
+      "name": "Cooling Kit",
+      "description": "Complete cooling kit that maximizes effectiveness when paired with the 3in1 Waist Fan",
+      "items": {
+        "sleeves": {
+          "name": "Arm Sleeves",
+          "description": "UV protection + contact cooling fabric to keep your arms cool"
+        },
+        "hoodie": {
+          "name": "Cool Towel Hoodie",
+          "description": "UV protection and cooling from head to neck"
+        },
+        "icePack": {
+          "name": "Ice Pack",
+          "description": "Attach to the fan for maximized cold air effect"
+        },
+        "wear": {
+          "name": "Cooling Wear",
+          "description": "Maximum ventilation design for full-body cooling"
+        }
+      }
+    },
+    "inquiry": {
+      "title": "Purchase Inquiry",
+      "description": "For pricing, bulk orders, or enterprise solutions, please contact us below.",
+      "email": "Email Inquiry",
+      "kakao": "KakaoTalk Inquiry"
+    }
   },
   "footer": {
     "company": "SCG Solutions Co, Ltd.",

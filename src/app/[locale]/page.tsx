@@ -5,6 +5,7 @@ import Product from '@/components/sections/Product';
 import Vision from '@/components/sections/Vision';
 import Business from '@/components/sections/Business';
 import CTA from '@/components/sections/CTA';
+import SectionDivider from '@/components/ui/SectionDivider';
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -17,10 +18,15 @@ export default async function HomePage({ params }: Props) {
   return (
     <>
       <Hero />
+      <SectionDivider />
       <Problem />
+      <SectionDivider />
       <Product />
+      <SectionDivider />
       <Vision />
+      <SectionDivider />
       <Business />
+      <SectionDivider />
       <CTA />
     </>
   );

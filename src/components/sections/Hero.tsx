@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import Button from '@/components/ui/Button';
 
@@ -49,10 +49,11 @@ function LineAnimation() {
 
 export default function Hero() {
   const t = useTranslations('hero');
+  const reduced = useReducedMotion();
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <LineAnimation />
+      {!reduced && <LineAnimation />}
 
       <div className="relative z-10 mx-auto max-w-[1280px] px-6 lg:px-8 text-center">
         <motion.h1

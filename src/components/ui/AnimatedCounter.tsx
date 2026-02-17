@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, useReducedMotion } from 'framer-motion';
 
 type AnimatedCounterProps = {
   value: number;
@@ -20,10 +20,12 @@ export default function AnimatedCounter({
 }: AnimatedCounterProps) {
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
-  const [display, setDisplay] = useState('0');
+  const reduced = useReducedMotion();
+  const finalDisplay = decimals > 0 ? value.toFixed(decimals) : Math.floor(value).toLocaleString();
+  const [display, setDisplay] = useState(reduced ? finalDisplay : '0');
 
   useEffect(() => {
-    if (!isInView) return;
+    if (!isInView || reduced) return;
 
     const start = 0;
     const end = value;
@@ -33,7 +35,6 @@ export default function AnimatedCounter({
     function update(currentTime: number) {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / durationMs, 1);
-      // Ease out cubic
       const eased = 1 - Math.pow(1 - progress, 3);
       const current = start + (end - start) * eased;
 
@@ -49,7 +50,16 @@ export default function AnimatedCounter({
     }
 
     requestAnimationFrame(update);
-  }, [isInView, value, duration, decimals]);
+  }, [isInView, value, duration, decimals, reduced]);
+
+  if (reduced) {
+    return (
+      <span ref={ref} className={className}>
+        {finalDisplay}
+        {suffix}
+      </span>
+    );
+  }
 
   return (
     <motion.span

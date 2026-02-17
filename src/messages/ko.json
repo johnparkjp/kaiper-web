@@ -8,7 +8,8 @@
     "product": "제품",
     "vision": "비전",
     "business": "기업 솔루션",
-    "contact": "문의하기"
+    "contact": "문의하기",
+    "shop": "Shop"
   },
   "hero": {
     "headline": "Defying Heat,\nEmpowering Human\nPerformance",
@@ -145,6 +146,88 @@
     "placeholder": "이메일 주소",
     "button": "구독하기",
     "privacy": "구독 시 개인정보처리방침에 동의합니다."
+  },
+  "shop": {
+    "hero": {
+      "badge": "SHOP",
+      "title": "쿨링의 새로운 기준",
+      "subtitle": "극한 더위 환경에서 퍼포먼스를 지키는 Kaiper의 제품을 만나보세요."
+    },
+    "fan": {
+      "badge": "FLAGSHIP",
+      "name": "3in1 Waist Fan",
+      "tagline": "하나의 디바이스, 세 가지 모드",
+      "description": "허리 장착형 쿨링 팬. 배터리 겸용으로 스마트폰 충전까지. 건설 현장부터 야외 레저까지, 어디서든 시원하게.",
+      "specs": {
+        "mode": {
+          "label": "3-in-1 모드",
+          "value": "팬 + 넥밴드 + 보조배터리"
+        },
+        "battery": {
+          "label": "배터리",
+          "value": "4,500mAh"
+        },
+        "charging": {
+          "label": "충전",
+          "value": "USB-C 급속충전"
+        },
+        "control": {
+          "label": "풍속 조절",
+          "value": "슬라이더 무단 조절"
+        },
+        "weight": {
+          "label": "무게",
+          "value": "280g"
+        },
+        "noise": {
+          "label": "소음",
+          "value": "35dB 이하"
+        }
+      },
+      "features": {
+        "versatile": {
+          "title": "다용도",
+          "description": "허리·테이블·넥밴드 등 다양한 착용 방식"
+        },
+        "durable": {
+          "title": "내구성",
+          "description": "IP54 방진방수로 현장 사용에 적합"
+        },
+        "portable": {
+          "title": "휴대성",
+          "description": "280g 초경량, 클립 탈부착 설계"
+        }
+      }
+    },
+    "kit": {
+      "badge": "COOLING KIT",
+      "name": "Cooling Kit",
+      "description": "3in1 Waist Fan과 함께 사용하면 극대화되는 종합 쿨링 키트",
+      "items": {
+        "sleeves": {
+          "name": "쿨토시",
+          "description": "UV 차단 + 접촉 냉감 원단으로 팔을 시원하게"
+        },
+        "hoodie": {
+          "name": "쿨타월후디",
+          "description": "머리부터 목까지 자외선 차단과 쿨링을 동시에"
+        },
+        "icePack": {
+          "name": "아이스백",
+          "description": "팬에 장착하면 냉풍 효과를 극대화"
+        },
+        "wear": {
+          "name": "쿨링 의류",
+          "description": "통기성 극대화 설계로 전신 쿨링 지원"
+        }
+      }
+    },
+    "inquiry": {
+      "title": "구매 문의",
+      "description": "Kaiper 제품에 대한 가격, 대량 구매, 기업 솔루션 문의는 아래로 연락주세요.",
+      "email": "이메일 문의",
+      "kakao": "카카오톡 문의"
+    }
   },
   "footer": {
     "company": "SCG Solutions Co, Ltd.",
