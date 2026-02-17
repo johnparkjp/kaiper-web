@@ -54,6 +54,14 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <html lang={locale} className="md:scroll-smooth">
+      <head>
+        <link
+          rel="stylesheet"
+          as="style"
+          crossOrigin="anonymous"
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+        />
+      </head>
       <body className="bg-kaiper-black text-kaiper-white antialiased">
         <NextIntlClientProvider messages={messages}>
           <Header />

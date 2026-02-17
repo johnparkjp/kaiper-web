@@ -11,7 +11,7 @@
   --color-accent-blue: #00befa;
   --color-accent-green: #1edb46;
   --color-accent-orange: #ff6428;
-  --font-sans: "Inter", "Pretendard", system-ui, -apple-system, sans-serif;
+  --font-sans: "Pretendard Variable", "Pretendard", system-ui, -apple-system, sans-serif;
 }
 
 @media (min-width: 768px) {
