@@ -53,7 +53,7 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {!reduced && <LineAnimation />}
+      {!reduced ? <LineAnimation /> : null}
 
       <div className="relative z-10 mx-auto max-w-[1280px] px-6 lg:px-8 text-center">
         <motion.h1

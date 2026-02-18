@@ -89,13 +89,13 @@ export default function Header() {
           className={`${baseClass} ${colorClass}`}
         >
           {t(link.key)}
-          {!mobile && isActive && (
+          {!mobile && isActive ? (
             <motion.span
               layoutId="nav-dot"
               className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-accent-blue"
               transition={{ type: 'spring', stiffness: 380, damping: 30 }}
             />
-          )}
+          ) : null}
         </a>
       );
     }
@@ -147,13 +147,13 @@ export default function Header() {
               {NAV_LINKS.map((link) => renderNavLink(link, false))}
               <Link href="/shop" className={shopDesktopClass}>
                 {t('shop')}
-                {shopIsActive && (
+                {shopIsActive ? (
                   <motion.span
                     layoutId="nav-dot"
                     className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-accent-blue"
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   />
-                )}
+                ) : null}
               </Link>
             </nav>
 

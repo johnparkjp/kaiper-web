@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import { setRequestLocale } from 'next-intl/server';
 import ShopHero from '@/components/shop/ShopHero';
-import FanSection from '@/components/shop/FanSection';
-import KitSection from '@/components/shop/KitSection';
-import InquirySection from '@/components/shop/InquirySection';
 import SectionDivider from '@/components/ui/SectionDivider';
+
+const FanSection = dynamic(() => import('@/components/shop/FanSection'));
+const KitSection = dynamic(() => import('@/components/shop/KitSection'));
+const InquirySection = dynamic(() => import('@/components/shop/InquirySection'));
 
 type Props = {
   params: Promise<{ locale: string }>;

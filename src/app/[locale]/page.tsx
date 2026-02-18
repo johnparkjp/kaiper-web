@@ -1,11 +1,13 @@
+import dynamic from 'next/dynamic';
 import { setRequestLocale } from 'next-intl/server';
 import Hero from '@/components/sections/Hero';
-import Problem from '@/components/sections/Problem';
-import Product from '@/components/sections/Product';
-import Vision from '@/components/sections/Vision';
-import Business from '@/components/sections/Business';
-import CTA from '@/components/sections/CTA';
 import SectionDivider from '@/components/ui/SectionDivider';
+
+const Problem = dynamic(() => import('@/components/sections/Problem'));
+const Product = dynamic(() => import('@/components/sections/Product'));
+const Vision = dynamic(() => import('@/components/sections/Vision'));
+const Business = dynamic(() => import('@/components/sections/Business'));
+const CTA = dynamic(() => import('@/components/sections/CTA'));
 
 type Props = {
   params: Promise<{ locale: string }>;
