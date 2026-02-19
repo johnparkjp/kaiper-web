@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 import { BRAND, SOCIAL_LINKS } from '@/lib/constants';
 
 export default function Footer() {
@@ -62,12 +63,12 @@ export default function Footer() {
               >
                 {t('terms')}
               </a>
-              <a
-                href="#"
+              <Link
+                href="/privacy"
                 className="text-sm text-cool-gray-40 hover:text-accent-blue transition-colors"
               >
                 {t('privacy')}
-              </a>
+              </Link>
             </div>
           </div>
         </div>
