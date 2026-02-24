@@ -1,21 +1,48 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 export default function CTA() {
   const t = useTranslations('cta');
   const [email, setEmail] = useState('');
+  const [error, setError] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+
+  const validate = useCallback(
+    (value: string): string => {
+      if (!value.trim()) return t('errorRequired');
+      if (!EMAIL_REGEX.test(value)) return t('errorInvalid');
+      return '';
+    },
+    [t]
+  );
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setEmail(value);
+    if (error) setError(validate(value));
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
+    const validationError = validate(email);
+    if (validationError) {
+      setError(validationError);
+      return;
+    }
+    setSubmitting(true);
+    // Simulate async submission
+    setTimeout(() => {
       setSubmitted(true);
       setEmail('');
-    }
+      setSubmitting(false);
+    }, 600);
   };
 
   return (
@@ -39,34 +66,49 @@ export default function CTA() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 className="p-6 border border-accent-green/30 rounded-2xl"
+                role="status"
               >
                 <div className="text-accent-green text-2xl mb-2">&#10003;</div>
-                <p className="text-kaiper-white font-semibold">Thank you!</p>
+                <p className="text-kaiper-white font-semibold">{t('success')}</p>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3" noValidate>
-                <label htmlFor="cta-email" className="sr-only">
-                  {t('placeholder')}
-                </label>
-                <input
-                  id="cta-email"
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder={t('placeholder')}
-                  required
-                  aria-required="true"
-                  aria-describedby="cta-privacy"
-                  className="flex-1 px-5 py-3.5 bg-cool-gray-50/20 border border-cool-gray-50/30 rounded-full text-kaiper-white placeholder:text-cool-gray-40 focus:outline-none focus:border-accent-blue transition-colors"
-                />
-                <motion.button
-                  type="submit"
-                  className="px-8 py-3.5 bg-accent-blue text-kaiper-black font-semibold rounded-full hover:bg-accent-blue/90 transition-colors"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  {t('button')}
-                </motion.button>
+              <form onSubmit={handleSubmit} className="flex flex-col gap-3" noValidate>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <label htmlFor="cta-email" className="sr-only">
+                    {t('placeholder')}
+                  </label>
+                  <input
+                    id="cta-email"
+                    type="email"
+                    value={email}
+                    onChange={handleChange}
+                    onBlur={() => { if (email) setError(validate(email)); }}
+                    placeholder={t('placeholder')}
+                    required
+                    aria-required="true"
+                    aria-invalid={error ? 'true' : undefined}
+                    aria-describedby={`${error ? 'cta-error' : ''} cta-privacy`.trim()}
+                    className={`flex-1 px-5 py-3.5 bg-cool-gray-50/20 border rounded-full text-kaiper-white placeholder:text-cool-gray-40 focus:outline-none transition-colors ${
+                      error
+                        ? 'border-accent-orange focus:border-accent-orange'
+                        : 'border-cool-gray-50/30 focus:border-accent-blue'
+                    }`}
+                  />
+                  <motion.button
+                    type="submit"
+                    disabled={submitting}
+                    className="px-8 py-3.5 bg-accent-blue text-kaiper-black font-semibold rounded-full hover:bg-accent-blue/90 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+                    whileHover={submitting ? {} : { scale: 1.02 }}
+                    whileTap={submitting ? {} : { scale: 0.98 }}
+                  >
+                    {submitting ? t('submitting') : t('button')}
+                  </motion.button>
+                </div>
+                {error && (
+                  <p id="cta-error" className="text-sm text-accent-orange" role="alert">
+                    {error}
+                  </p>
+                )}
               </form>
             )}
           </ScrollReveal>

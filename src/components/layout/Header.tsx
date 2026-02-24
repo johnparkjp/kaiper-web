@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslations, useLocale } from 'next-intl';
 import { useRouter, usePathname, Link } from '@/i18n/navigation';
@@ -17,6 +17,8 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string | null>(null);
+  const mobileNavRef = useRef<HTMLElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   const isHome = pathname === '/';
 
@@ -37,6 +39,45 @@ export default function Header() {
     return () => {
       document.body.style.overflow = '';
     };
+  }, [mobileOpen]);
+
+  // Focus trap for mobile menu
+  useEffect(() => {
+    if (!mobileOpen || !mobileNavRef.current) return;
+
+    const nav = mobileNavRef.current;
+    const focusableElements = nav.querySelectorAll<HTMLElement>(
+      'a[href], button, input, textarea, select, [tabindex]:not([tabindex="-1"])'
+    );
+    const firstFocusable = focusableElements[0];
+    const lastFocusable = focusableElements[focusableElements.length - 1];
+
+    // Focus first element on open
+    firstFocusable?.focus();
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setMobileOpen(false);
+        menuButtonRef.current?.focus();
+        return;
+      }
+      if (e.key !== 'Tab') return;
+
+      if (e.shiftKey) {
+        if (document.activeElement === firstFocusable) {
+          e.preventDefault();
+          lastFocusable?.focus();
+        }
+      } else {
+        if (document.activeElement === lastFocusable) {
+          e.preventDefault();
+          firstFocusable?.focus();
+        }
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
   }, [mobileOpen]);
 
   // IntersectionObserver for active section (only on home page)
@@ -67,7 +108,10 @@ export default function Header() {
     router.replace(pathname, { locale: next });
   };
 
-  const closeMobile = useCallback(() => setMobileOpen(false), []);
+  const closeMobile = useCallback(() => {
+    setMobileOpen(false);
+    menuButtonRef.current?.focus();
+  }, []);
 
   const renderNavLink = (link: (typeof NAV_LINKS)[number], mobile: boolean) => {
     const isActive = isHome && activeSection === link.key;
@@ -169,6 +213,7 @@ export default function Header() {
 
               {/* Mobile menu button */}
               <button
+                ref={menuButtonRef}
                 onClick={() => setMobileOpen(!mobileOpen)}
                 className="md:hidden relative w-11 h-11 flex items-center justify-center"
                 aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
@@ -194,18 +239,30 @@ export default function Header() {
 
       {/* Mobile Nav — rendered outside header to avoid stacking issues */}
       {mobileOpen && (
-        <nav className="md:hidden fixed inset-0 top-16 z-50 bg-kaiper-black border-t border-cool-gray-50/30" aria-label="Mobile navigation">
-          <div className="px-6 py-8 flex flex-col gap-6">
-            {NAV_LINKS.map((link) => renderNavLink(link, true))}
-            <Link
-              href="/shop"
-              onClick={closeMobile}
-              className={shopMobileClass}
-            >
-              {t('shop')}
-            </Link>
-          </div>
-        </nav>
+        <>
+          {/* Overlay backdrop */}
+          <div
+            className="md:hidden fixed inset-0 top-16 z-40 bg-kaiper-black/60"
+            onClick={closeMobile}
+            aria-hidden="true"
+          />
+          <nav
+            ref={mobileNavRef}
+            className="md:hidden fixed inset-0 top-16 z-50 bg-kaiper-black border-t border-cool-gray-50/30 max-h-[calc(100vh-4rem)] overflow-y-auto"
+            aria-label="Mobile navigation"
+          >
+            <div className="px-6 py-8 flex flex-col gap-6">
+              {NAV_LINKS.map((link) => renderNavLink(link, true))}
+              <Link
+                href="/shop"
+                onClick={closeMobile}
+                className={shopMobileClass}
+              >
+                {t('shop')}
+              </Link>
+            </div>
+          </nav>
+        </>
       )}
     </>
   );

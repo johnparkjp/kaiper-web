@@ -59,12 +59,12 @@ export default function Footer() {
               Legal
             </h3>
             <div className="flex flex-col gap-2">
-              <a
-                href="#"
+              <Link
+                href="/terms"
                 className="text-sm text-cool-gray-40 hover:text-accent-blue transition-colors py-2 inline-block"
               >
                 {t('terms')}
-              </a>
+              </Link>
               <Link
                 href="/privacy"
                 className="text-sm text-cool-gray-40 hover:text-accent-blue transition-colors py-2 inline-block"

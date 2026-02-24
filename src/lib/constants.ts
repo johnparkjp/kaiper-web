@@ -9,8 +9,8 @@ export const COLORS = {
   black: '#000000',
   white: '#ffffff',
   coolGray: {
-    50: '#3e4149',
-    40: '#6a6e77',
+    50: '#4a4d56',
+    40: '#8b8f96',
     30: '#9da1a7',
     20: '#ced0db',
     10: '#ededf5',

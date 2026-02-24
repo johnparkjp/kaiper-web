@@ -145,6 +145,10 @@
     "subtitle": "Get the latest on new products, promotions, and brand news from Kaiper.",
     "placeholder": "Email address",
     "button": "Subscribe",
+    "submitting": "Sending...",
+    "success": "Thank you! You're now subscribed.",
+    "errorRequired": "Please enter your email address.",
+    "errorInvalid": "Please enter a valid email address.",
     "privacy": "By subscribing, you agree to our Privacy Policy."
   },
   "shop": {
@@ -227,6 +231,66 @@
       "description": "For pricing, bulk orders, or enterprise solutions, please contact us below.",
       "email": "Email Inquiry",
       "kakao": "KakaoTalk Inquiry"
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Find answers to common questions about Kaiper products and services.",
+    "items": {
+      "q1": {
+        "question": "How do I use the 3in1 Waist Fan?",
+        "answer": "Attach it to your waist belt or clip, then press the power button. Adjust the wind speed with the stepless slider. You can switch to neckband mode or connect a USB-C cable to use it as a power bank."
+      },
+      "q2": {
+        "question": "How long does the battery last?",
+        "answer": "The 4,500mAh battery lasts up to 8 hours on low speed. It supports USB-C fast charging and fully charges in about 2 hours."
+      },
+      "q3": {
+        "question": "Is it waterproof?",
+        "answer": "It has IP54 dust and water resistance. It can handle sweat and light rain, but avoid submerging it in water."
+      },
+      "q4": {
+        "question": "Is the Cooling Kit sold separately?",
+        "answer": "Yes, the Cooling Kit (arm sleeves, cool towel hoodie, ice pack, cooling wear) is available separately. Using it with the 3in1 Waist Fan maximizes the cooling effect."
+      },
+      "q5": {
+        "question": "Are there bulk purchase discounts?",
+        "answer": "Yes, we offer bulk purchase discount programs for enterprise customers. Please email contact@kaiper.io or reach out via our KakaoTalk channel."
+      },
+      "q6": {
+        "question": "How long does shipping take?",
+        "answer": "Domestic orders ship within 2-3 business days after payment. Enterprise bulk orders are scheduled separately."
+      }
+    }
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "lastUpdated": "Last updated: February 24, 2026",
+    "sections": {
+      "s1": {
+        "title": "1. Acceptance of Terms",
+        "content": "By using this website, you agree to these Terms of Service. If you do not agree, please discontinue use of the service."
+      },
+      "s2": {
+        "title": "2. Service Description",
+        "content": "KAIPER provides cooling solutions that protect human performance in extreme heat environments. This website includes product information, purchase inquiries, newsletter subscriptions, and related services."
+      },
+      "s3": {
+        "title": "3. Intellectual Property",
+        "content": "All content on this website (text, images, logos, designs, etc.) is the intellectual property of SCG Solutions Co, Ltd. and may not be reproduced, modified, or distributed without prior written consent."
+      },
+      "s4": {
+        "title": "4. Product Information",
+        "content": "Product specifications, images, and pricing displayed on the website are subject to change without prior notice. Please contact us directly for the most up-to-date information."
+      },
+      "s5": {
+        "title": "5. Limitation of Liability",
+        "content": "KAIPER limits its liability for direct, indirect, or incidental damages arising from use of the website to the extent permitted by applicable law."
+      },
+      "s6": {
+        "title": "6. Contact",
+        "content": "For questions about these Terms of Service, please contact contact@kaiper.io."
+      }
     }
   },
   "footer": {

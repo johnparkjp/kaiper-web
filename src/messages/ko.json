@@ -9,10 +9,10 @@
     "vision": "비전",
     "business": "기업 솔루션",
     "contact": "문의하기",
-    "shop": "Shop"
+    "shop": "쇼핑"
   },
   "hero": {
-    "headline": "Defying Heat,\nEmpowering Human\nPerformance",
+    "headline": "극한의 더위를 넘어,\n인간의 퍼포먼스를\n해방하다",
     "subline": "Break into, Break through.",
     "cta": "제품 알아보기",
     "scroll": "스크롤하여 더 보기"
@@ -40,15 +40,15 @@
     },
     "cards": {
       "crisis": {
-        "title": "Climate Crisis",
+        "title": "기후 위기",
         "description": "지난 10년간 폭염 일수가 2배 증가. 도시 열섬현상과 기후 위기가 결합되며 야외 노동 환경이 급격히 악화되고 있습니다."
       },
       "vulnerability": {
-        "title": "Human Vulnerability",
+        "title": "인체의 한계",
         "description": "인간의 체온 조절 능력은 한계가 있습니다. 38°C 이상에서 집중력은 50% 저하, 열사병 위험은 기하급수적으로 증가합니다."
       },
       "gap": {
-        "title": "Solution Gap",
+        "title": "솔루션의 부재",
         "description": "기존 쿨링 제품은 성능·편의성·휴대성을 모두 충족하지 못합니다. 현장 근로자에게 진짜 필요한 솔루션이 없었습니다."
       }
     }
@@ -58,7 +58,7 @@
     "title": "제품 라인업",
     "subtitle": "극한 환경에서도 퍼포먼스를 유지하는 Kaiper의 쿨링 기술",
     "fan": {
-      "name": "3in1 Waist Fan",
+      "name": "3in1 허리 선풍기",
       "tagline": "하나의 디바이스, 세 가지 모드",
       "description": "허리 장착형 쿨링 팬. 배터리 겸용으로 스마트폰 충전까지.",
       "specs": {
@@ -81,7 +81,7 @@
       }
     },
     "kit": {
-      "name": "Cooling Kit",
+      "name": "쿨링 키트",
       "description": "쿨토시, 쿨타월후디, 아이스백을 포함한 종합 쿨링 키트",
       "items": {
         "sleeves": "쿨토시",
@@ -98,15 +98,15 @@
     "subtitle": "Kaiper는 단순한 제품이 아닌, 극한의 환경에서 인간의 자유를 되찾는 무브먼트입니다.",
     "values": {
       "optimize": {
-        "title": "Optimize",
+        "title": "최적화",
         "description": "체온·에너지·효율, 인간 퍼포먼스의 모든 변수를 최적화합니다."
       },
       "synchronize": {
-        "title": "Synchronize",
+        "title": "동기화",
         "description": "몸과 도구, 사람과 환경 사이의 완벽한 싱크를 만듭니다."
       },
       "mobilize": {
-        "title": "Mobilize",
+        "title": "동원",
         "description": "어디서든 움직일 수 있는 자유. 현장의 모빌리티를 극대화합니다."
       }
     },
@@ -145,6 +145,10 @@
     "subtitle": "Kaiper의 신제품, 프로모션, 브랜드 소식을 이메일로 전해드립니다.",
     "placeholder": "이메일 주소",
     "button": "구독하기",
+    "submitting": "처리 중...",
+    "success": "감사합니다! 구독이 완료되었습니다.",
+    "errorRequired": "이메일 주소를 입력해주세요.",
+    "errorInvalid": "올바른 이메일 형식을 입력해주세요.",
     "privacy": "구독 시 개인정보처리방침에 동의합니다."
   },
   "shop": {
@@ -155,7 +159,7 @@
     },
     "fan": {
       "badge": "FLAGSHIP",
-      "name": "3in1 Waist Fan",
+      "name": "3in1 허리 선풍기",
       "tagline": "하나의 디바이스, 세 가지 모드",
       "description": "허리 장착형 쿨링 팬. 배터리 겸용으로 스마트폰 충전까지. 건설 현장부터 야외 레저까지, 어디서든 시원하게.",
       "specs": {
@@ -201,8 +205,8 @@
     },
     "kit": {
       "badge": "COOLING KIT",
-      "name": "Cooling Kit",
-      "description": "3in1 Waist Fan과 함께 사용하면 극대화되는 종합 쿨링 키트",
+      "name": "쿨링 키트",
+      "description": "3in1 허리 선풍기와 함께 사용하면 극대화되는 종합 쿨링 키트",
       "items": {
         "sleeves": {
           "name": "쿨토시",
@@ -227,6 +231,66 @@
       "description": "Kaiper 제품에 대한 가격, 대량 구매, 기업 솔루션 문의는 아래로 연락주세요.",
       "email": "이메일 문의",
       "kakao": "카카오톡 문의"
+    }
+  },
+  "faq": {
+    "title": "자주 묻는 질문",
+    "subtitle": "Kaiper 제품과 서비스에 대해 궁금한 점을 확인하세요.",
+    "items": {
+      "q1": {
+        "question": "3in1 허리 선풍기는 어떻게 사용하나요?",
+        "answer": "허리 벨트나 클립으로 장착 후, 전원 버튼을 눌러 작동합니다. 슬라이더로 풍속을 무단 조절할 수 있으며, 넥밴드 모드로 전환하거나 USB-C 케이블을 연결해 보조배터리로도 사용 가능합니다."
+      },
+      "q2": {
+        "question": "배터리 사용 시간은 얼마나 되나요?",
+        "answer": "4,500mAh 배터리로 최대 8시간(저속 기준) 사용 가능합니다. USB-C 급속충전을 지원하며, 약 2시간이면 완충됩니다."
+      },
+      "q3": {
+        "question": "방수가 되나요?",
+        "answer": "IP54 등급의 방진방수를 지원합니다. 땀이나 가벼운 빗물에는 문제없이 사용할 수 있으나, 물에 직접 담그는 것은 피해주세요."
+      },
+      "q4": {
+        "question": "쿨링 키트는 별도 구매인가요?",
+        "answer": "네, 쿨링 키트(쿨토시, 쿨타월후디, 아이스백, 쿨링 의류)는 별도로 구매하실 수 있습니다. 3in1 허리 선풍기와 함께 사용하면 쿨링 효과가 극대화됩니다."
+      },
+      "q5": {
+        "question": "대량 구매 할인이 있나요?",
+        "answer": "기업 고객을 위한 대량 구매 할인 프로그램이 있습니다. contact@kaiper.io로 이메일을 보내시거나 카카오톡 채널로 문의해주세요."
+      },
+      "q6": {
+        "question": "배송은 얼마나 걸리나요?",
+        "answer": "국내 배송은 결제 후 2~3일 영업일 내에 출고됩니다. 기업 대량 주문의 경우 별도 일정을 안내해 드립니다."
+      }
+    }
+  },
+  "terms": {
+    "title": "이용약관",
+    "lastUpdated": "최종 업데이트: 2026년 2월 24일",
+    "sections": {
+      "s1": {
+        "title": "1. 서비스 이용 동의",
+        "content": "본 웹사이트를 이용함으로써 귀하는 본 이용약관에 동의하게 됩니다. 동의하지 않으시는 경우 서비스 이용을 중단해주시기 바랍니다."
+      },
+      "s2": {
+        "title": "2. 서비스 설명",
+        "content": "KAIPER는 극한 더위 환경에서 인간의 퍼포먼스를 보호하는 쿨링 솔루션을 제공합니다. 본 웹사이트는 제품 정보 제공, 구매 문의, 뉴스레터 구독 등의 서비스를 포함합니다."
+      },
+      "s3": {
+        "title": "3. 지적 재산권",
+        "content": "본 웹사이트에 포함된 모든 콘텐츠(텍스트, 이미지, 로고, 디자인 등)는 SCG Solutions Co, Ltd.의 지적 재산이며, 사전 서면 동의 없이 복제, 수정, 배포할 수 없습니다."
+      },
+      "s4": {
+        "title": "4. 제품 정보",
+        "content": "웹사이트에 표시된 제품 사양, 이미지, 가격은 사전 통보 없이 변경될 수 있습니다. 최신 정보는 직접 문의를 통해 확인해주시기 바랍니다."
+      },
+      "s5": {
+        "title": "5. 책임 제한",
+        "content": "KAIPER는 웹사이트 이용 중 발생하는 직접적, 간접적, 부수적 손해에 대해 관련 법률이 허용하는 범위 내에서 책임을 제한합니다."
+      },
+      "s6": {
+        "title": "6. 문의",
+        "content": "이용약관에 관한 문의사항은 contact@kaiper.io로 연락해주세요."
+      }
     }
   },
   "footer": {
