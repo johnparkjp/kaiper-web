@@ -44,13 +44,19 @@ export default function CTA() {
                 <p className="text-kaiper-white font-semibold">Thank you!</p>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
+              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3" noValidate>
+                <label htmlFor="cta-email" className="sr-only">
+                  {t('placeholder')}
+                </label>
                 <input
+                  id="cta-email"
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder={t('placeholder')}
                   required
+                  aria-required="true"
+                  aria-describedby="cta-privacy"
                   className="flex-1 px-5 py-3.5 bg-cool-gray-50/20 border border-cool-gray-50/30 rounded-full text-kaiper-white placeholder:text-cool-gray-40 focus:outline-none focus:border-accent-blue transition-colors"
                 />
                 <motion.button
@@ -66,7 +72,7 @@ export default function CTA() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.3}>
-            <p className="mt-4 text-xs text-cool-gray-40">
+            <p id="cta-privacy" className="mt-4 text-xs text-cool-gray-40">
               {t('privacy')}
             </p>
           </ScrollReveal>

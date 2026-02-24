@@ -8,12 +8,12 @@ const SEGMENT_KEYS = ['construction', 'logistics', 'manufacturing', 'agriculture
 
 const SEGMENT_ICONS = {
   construction: (
-    <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
       <path d="M4 28h24M8 28V14l8-8 8 8v14M14 28v-8h4v8" />
     </svg>
   ),
   logistics: (
-    <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
       <rect x="2" y="8" width="18" height="14" rx="2" />
       <path d="M20 14h6l4 6v4h-10V14z" />
       <circle cx="9" cy="26" r="3" />
@@ -21,12 +21,12 @@ const SEGMENT_ICONS = {
     </svg>
   ),
   manufacturing: (
-    <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
       <path d="M4 28V12l8 6V12l8 6V12l8 6v10H4z" />
     </svg>
   ),
   agriculture: (
-    <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
       <path d="M16 28V16M16 16c-4-8-12-6-12-2s8 6 12 2zM16 16c4-8 12-6 12-2s-8 6-12 2z" />
     </svg>
   ),

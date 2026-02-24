@@ -161,7 +161,8 @@ export default function Header() {
             <div className="flex items-center gap-4">
               <button
                 onClick={switchLocale}
-                className="text-sm text-cool-gray-30 hover:text-kaiper-white transition-colors px-2 py-1 border border-cool-gray-50 rounded"
+                aria-label={locale === 'ko' ? 'Switch to English' : '한국어로 전환'}
+                className="text-sm text-cool-gray-30 hover:text-kaiper-white transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center border border-cool-gray-50 rounded"
               >
                 {locale === 'ko' ? 'EN' : 'KO'}
               </button>
@@ -169,8 +170,9 @@ export default function Header() {
               {/* Mobile menu button */}
               <button
                 onClick={() => setMobileOpen(!mobileOpen)}
-                className="md:hidden relative w-9 h-9 flex items-center justify-center"
-                aria-label="Menu"
+                className="md:hidden relative w-11 h-11 flex items-center justify-center"
+                aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+                aria-expanded={mobileOpen}
               >
                 <motion.span
                   className="absolute w-5 h-0.5 bg-kaiper-white"
@@ -192,7 +194,7 @@ export default function Header() {
 
       {/* Mobile Nav — rendered outside header to avoid stacking issues */}
       {mobileOpen && (
-        <div className="md:hidden fixed inset-0 top-16 z-50 bg-kaiper-black border-t border-cool-gray-50/30">
+        <nav className="md:hidden fixed inset-0 top-16 z-50 bg-kaiper-black border-t border-cool-gray-50/30" aria-label="Mobile navigation">
           <div className="px-6 py-8 flex flex-col gap-6">
             {NAV_LINKS.map((link) => renderNavLink(link, true))}
             <Link
@@ -203,7 +205,7 @@ export default function Header() {
               {t('shop')}
             </Link>
           </div>
-        </div>
+        </nav>
       )}
     </>
   );

@@ -47,7 +47,7 @@ export default function Product() {
             >
               <div className="text-center p-8">
                 <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-accent-blue/10 flex items-center justify-center">
-                  <svg className="w-16 h-16 text-accent-blue" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <svg className="w-16 h-16 text-accent-blue" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
                     <circle cx="32" cy="32" r="20" />
                     <circle cx="32" cy="32" r="8" />
                     <path d="M32 12v8M32 44v8M12 32h8M44 32h8" />
@@ -107,7 +107,7 @@ export default function Product() {
               <div className="group relative aspect-square bg-gradient-to-br from-cool-gray-50/15 to-cool-gray-50/5 rounded-2xl overflow-hidden border border-cool-gray-50/20 hover:border-accent-blue/30 transition-colors duration-300 flex items-center justify-center">
                 <div className="text-center p-4">
                   <div className="w-12 h-12 mx-auto mb-3 rounded-lg bg-cool-gray-50/20 flex items-center justify-center">
-                    <svg className="w-6 h-6 text-cool-gray-20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <svg className="w-6 h-6 text-cool-gray-20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
                       <rect x="3" y="3" width="18" height="18" rx="3" />
                       <path d="M8 12h8M12 8v8" />
                     </svg>

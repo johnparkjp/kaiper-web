@@ -28,15 +28,16 @@ export default function Footer() {
 
           {/* Links */}
           <div>
-            <h4 className="text-sm font-semibold text-cool-gray-20 mb-4 uppercase tracking-wider">
+            <h3 className="text-sm font-semibold text-cool-gray-20 mb-4 uppercase tracking-wider">
               Social
-            </h4>
+            </h3>
             <div className="flex flex-col gap-2">
               <a
                 href={SOCIAL_LINKS.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-cool-gray-40 hover:text-accent-blue transition-colors"
+                aria-label="Instagram (opens in new tab)"
+                className="text-sm text-cool-gray-40 hover:text-accent-blue transition-colors py-2 inline-block"
               >
                 Instagram
               </a>
@@ -44,7 +45,8 @@ export default function Footer() {
                 href={SOCIAL_LINKS.kakao}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-cool-gray-40 hover:text-accent-blue transition-colors"
+                aria-label="KakaoTalk (opens in new tab)"
+                className="text-sm text-cool-gray-40 hover:text-accent-blue transition-colors py-2 inline-block"
               >
                 KakaoTalk
               </a>
@@ -53,19 +55,19 @@ export default function Footer() {
 
           {/* Legal */}
           <div>
-            <h4 className="text-sm font-semibold text-cool-gray-20 mb-4 uppercase tracking-wider">
+            <h3 className="text-sm font-semibold text-cool-gray-20 mb-4 uppercase tracking-wider">
               Legal
-            </h4>
+            </h3>
             <div className="flex flex-col gap-2">
               <a
                 href="#"
-                className="text-sm text-cool-gray-40 hover:text-accent-blue transition-colors"
+                className="text-sm text-cool-gray-40 hover:text-accent-blue transition-colors py-2 inline-block"
               >
                 {t('terms')}
               </a>
               <Link
                 href="/privacy"
-                className="text-sm text-cool-gray-40 hover:text-accent-blue transition-colors"
+                className="text-sm text-cool-gray-40 hover:text-accent-blue transition-colors py-2 inline-block"
               >
                 {t('privacy')}
               </Link>
@@ -78,7 +80,7 @@ export default function Footer() {
           <p className="text-xs text-cool-gray-40">
             &copy; {new Date().getFullYear()} {t('company')} {t('rights')}
           </p>
-          <p className="text-xs text-cool-gray-50">
+          <p className="text-xs text-cool-gray-40">
             {BRAND.slogan}
           </p>
         </div>

@@ -9,19 +9,19 @@ const VALUE_KEYS = ['optimize', 'synchronize', 'mobilize'] as const;
 
 const VALUE_ICONS = {
   optimize: (
-    <svg className="w-10 h-10" viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <svg className="w-10 h-10" viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
       <circle cx="20" cy="20" r="15" />
       <path d="M15 20l3 3 7-7" />
     </svg>
   ),
   synchronize: (
-    <svg className="w-10 h-10" viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <svg className="w-10 h-10" viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
       <path d="M10 25a10 10 0 0118-4M30 15a10 10 0 01-18 4" />
       <path d="M28 11l2 4 4-2M12 29l-2-4-4 2" />
     </svg>
   ),
   mobilize: (
-    <svg className="w-10 h-10" viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <svg className="w-10 h-10" viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
       <path d="M20 5v30M5 20h30" />
       <path d="M20 5l5 5M20 5l-5 5M20 35l5-5M20 35l-5-5M5 20l5-5M5 20l5 5M35 20l-5-5M35 20l-5 5" />
     </svg>

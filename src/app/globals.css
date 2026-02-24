@@ -3,8 +3,8 @@
 @theme inline {
   --color-kaiper-black: #000000;
   --color-kaiper-white: #ffffff;
-  --color-cool-gray-50: #3e4149;
-  --color-cool-gray-40: #6a6e77;
+  --color-cool-gray-50: #4a4d56;
+  --color-cool-gray-40: #8b8f96;
   --color-cool-gray-30: #9da1a7;
   --color-cool-gray-20: #ced0db;
   --color-cool-gray-10: #ededf5;
@@ -43,12 +43,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #3e4149;
+  background: #4a4d56;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #6a6e77;
+  background: #8b8f96;
 }
 
 /* Section Divider */

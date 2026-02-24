@@ -6,7 +6,7 @@ import Button from '@/components/ui/Button';
 
 function LineAnimation() {
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
       {[...Array(5)].map((_, i) => (
         <motion.div
           key={i}

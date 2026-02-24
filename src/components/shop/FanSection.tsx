@@ -8,18 +8,18 @@ const FEATURE_KEYS = ['versatile', 'durable', 'portable'] as const;
 
 const FEATURE_ICONS = {
   versatile: (
-    <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
       <circle cx="16" cy="16" r="12" />
       <path d="M10 16h12M16 10v12" />
     </svg>
   ),
   durable: (
-    <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
       <path d="M16 4l10 5v9c0 5.5-4.2 10.2-10 12-5.8-1.8-10-6.5-10-12V9l10-5z" />
     </svg>
   ),
   portable: (
-    <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
       <path d="M8 28V8a4 4 0 014-4h8a4 4 0 014 4v20M12 4v4M20 4v4M12 24h8" />
     </svg>
   ),
@@ -43,7 +43,7 @@ export default function FanSection() {
             <div className="relative aspect-square bg-gradient-to-br from-cool-gray-50/20 to-cool-gray-50/5 rounded-3xl overflow-hidden flex items-center justify-center border border-cool-gray-50/20">
               <div className="text-center p-8">
                 <div className="w-36 h-36 mx-auto mb-6 rounded-full bg-accent-blue/10 flex items-center justify-center">
-                  <svg className="w-20 h-20 text-accent-blue" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <svg className="w-20 h-20 text-accent-blue" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
                     <circle cx="32" cy="32" r="20" />
                     <circle cx="32" cy="32" r="8" />
                     <path d="M32 12v8M32 44v8M12 32h8M44 32h8" />
