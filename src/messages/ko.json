@@ -9,10 +9,10 @@
     "vision": "비전",
     "business": "기업 솔루션",
     "contact": "문의하기",
-    "shop": "쇼핑"
+    "shop": "Shop"
   },
   "hero": {
-    "headline": "극한의 더위를 넘어,\n인간의 퍼포먼스를\n해방하다",
+    "headline": "Defying Heat,\nEmpowering Human\nPerformance",
     "subline": "Break into, Break through.",
     "cta": "제품 알아보기",
     "scroll": "스크롤하여 더 보기"
@@ -40,15 +40,15 @@
     },
     "cards": {
       "crisis": {
-        "title": "기후 위기",
+        "title": "Climate Crisis",
         "description": "지난 10년간 폭염 일수가 2배 증가. 도시 열섬현상과 기후 위기가 결합되며 야외 노동 환경이 급격히 악화되고 있습니다."
       },
       "vulnerability": {
-        "title": "인체의 한계",
+        "title": "Human Vulnerability",
         "description": "인간의 체온 조절 능력은 한계가 있습니다. 38°C 이상에서 집중력은 50% 저하, 열사병 위험은 기하급수적으로 증가합니다."
       },
       "gap": {
-        "title": "솔루션의 부재",
+        "title": "Solution Gap",
         "description": "기존 쿨링 제품은 성능·편의성·휴대성을 모두 충족하지 못합니다. 현장 근로자에게 진짜 필요한 솔루션이 없었습니다."
       }
     }
@@ -58,7 +58,7 @@
     "title": "제품 라인업",
     "subtitle": "극한 환경에서도 퍼포먼스를 유지하는 Kaiper의 쿨링 기술",
     "fan": {
-      "name": "3in1 허리 선풍기",
+      "name": "3in1 Waist Fan",
       "tagline": "하나의 디바이스, 세 가지 모드",
       "description": "허리 장착형 쿨링 팬. 배터리 겸용으로 스마트폰 충전까지.",
       "specs": {
@@ -81,7 +81,7 @@
       }
     },
     "kit": {
-      "name": "쿨링 키트",
+      "name": "Cooling Kit",
       "description": "쿨토시, 쿨타월후디, 아이스백을 포함한 종합 쿨링 키트",
       "items": {
         "sleeves": "쿨토시",
@@ -98,15 +98,15 @@
     "subtitle": "Kaiper는 단순한 제품이 아닌, 극한의 환경에서 인간의 자유를 되찾는 무브먼트입니다.",
     "values": {
       "optimize": {
-        "title": "최적화",
+        "title": "Optimize",
         "description": "체온·에너지·효율, 인간 퍼포먼스의 모든 변수를 최적화합니다."
       },
       "synchronize": {
-        "title": "동기화",
+        "title": "Synchronize",
         "description": "몸과 도구, 사람과 환경 사이의 완벽한 싱크를 만듭니다."
       },
       "mobilize": {
-        "title": "동원",
+        "title": "Mobilize",
         "description": "어디서든 움직일 수 있는 자유. 현장의 모빌리티를 극대화합니다."
       }
     },
@@ -159,7 +159,7 @@
     },
     "fan": {
       "badge": "FLAGSHIP",
-      "name": "3in1 허리 선풍기",
+      "name": "3in1 Waist Fan",
       "tagline": "하나의 디바이스, 세 가지 모드",
       "description": "허리 장착형 쿨링 팬. 배터리 겸용으로 스마트폰 충전까지. 건설 현장부터 야외 레저까지, 어디서든 시원하게.",
       "specs": {
@@ -205,8 +205,8 @@
     },
     "kit": {
       "badge": "COOLING KIT",
-      "name": "쿨링 키트",
-      "description": "3in1 허리 선풍기와 함께 사용하면 극대화되는 종합 쿨링 키트",
+      "name": "Cooling Kit",
+      "description": "3in1 Waist Fan과 함께 사용하면 극대화되는 종합 쿨링 키트",
       "items": {
         "sleeves": {
           "name": "쿨토시",
@@ -238,7 +238,7 @@
     "subtitle": "Kaiper 제품과 서비스에 대해 궁금한 점을 확인하세요.",
     "items": {
       "q1": {
-        "question": "3in1 허리 선풍기는 어떻게 사용하나요?",
+        "question": "3in1 Waist Fan는 어떻게 사용하나요?",
         "answer": "허리 벨트나 클립으로 장착 후, 전원 버튼을 눌러 작동합니다. 슬라이더로 풍속을 무단 조절할 수 있으며, 넥밴드 모드로 전환하거나 USB-C 케이블을 연결해 보조배터리로도 사용 가능합니다."
       },
       "q2": {
@@ -251,7 +251,7 @@
       },
       "q4": {
         "question": "쿨링 키트는 별도 구매인가요?",
-        "answer": "네, 쿨링 키트(쿨토시, 쿨타월후디, 아이스백, 쿨링 의류)는 별도로 구매하실 수 있습니다. 3in1 허리 선풍기와 함께 사용하면 쿨링 효과가 극대화됩니다."
+        "answer": "네, 쿨링 키트(쿨토시, 쿨타월후디, 아이스백, 쿨링 의류)는 별도로 구매하실 수 있습니다. 3in1 Waist Fan와 함께 사용하면 쿨링 효과가 극대화됩니다."
       },
       "q5": {
         "question": "대량 구매 할인이 있나요?",
