@@ -17,6 +17,8 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://kaiper.co.kr';
+
 export async function generateMetadata({
   params,
 }: {
@@ -25,20 +27,38 @@ export async function generateMetadata({
   const { locale } = await params;
   const isKo = locale === 'ko';
 
+  const title = isKo
+    ? 'KAIPER — 극한 더위를 이기는 쿨링 솔루션'
+    : 'KAIPER — Cooling Solutions for Extreme Heat';
+  const description = isKo
+    ? 'Kaiper는 극한 더위 환경에서 인간 퍼포먼스를 보호하는 쿨링 솔루션 브랜드입니다.'
+    : 'Kaiper protects human performance in extreme heat environments with advanced cooling solutions.';
+
   return {
+    metadataBase: new URL(BASE_URL),
     title: {
-      default: isKo
-        ? 'KAIPER — 극한 더위를 이기는 쿨링 솔루션'
-        : 'KAIPER — Cooling Solutions for Extreme Heat',
+      default: title,
       template: '%s | KAIPER',
     },
-    description: isKo
-      ? 'Kaiper는 극한 더위 환경에서 인간 퍼포먼스를 보호하는 쿨링 솔루션 브랜드입니다.'
-      : 'Kaiper protects human performance in extreme heat environments with advanced cooling solutions.',
+    description,
+    alternates: {
+      canonical: isKo ? '/' : '/en',
+      languages: {
+        ko: '/',
+        en: '/en',
+      },
+    },
     openGraph: {
       type: 'website',
       siteName: 'KAIPER',
       locale: isKo ? 'ko_KR' : 'en_US',
+      title,
+      description,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
     },
   };
 }
