@@ -1,7 +1,5 @@
 'use client';
 
-import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import FeatureCard from '@/components/ui/FeatureCard';
@@ -31,13 +29,6 @@ const VALUE_ICONS = {
 
 export default function Vision() {
   const t = useTranslations('vision');
-  const titleRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: titleRef,
-    offset: ['start end', 'end start'],
-  });
-  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.9, 1, 1, 0.95]);
 
   return (
     <section id="vision" className="py-20 lg:py-30">
@@ -50,26 +41,24 @@ export default function Vision() {
         </ScrollReveal>
 
         {/* Big Typography Reveal */}
-        <motion.div
-          ref={titleRef}
-          style={{ opacity, scale }}
-          className="py-16 lg:py-24"
-        >
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6">
-            {t('title').split('\n').map((line, i) => (
-              <span key={i} className="block">
-                {i === 0 ? (
-                  <span className="text-accent-blue">{line}</span>
-                ) : (
-                  line
-                )}
-              </span>
-            ))}
-          </h2>
-          <p className="text-cool-gray-30 text-lg lg:text-xl max-w-2xl">
-            {t('subtitle')}
-          </p>
-        </motion.div>
+        <ScrollReveal>
+          <div className="py-16 lg:py-24">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6">
+              {t('title').split('\n').map((line, i) => (
+                <span key={i} className="block">
+                  {i === 0 ? (
+                    <span className="text-accent-blue">{line}</span>
+                  ) : (
+                    line
+                  )}
+                </span>
+              ))}
+            </h2>
+            <p className="text-cool-gray-30 text-lg lg:text-xl max-w-2xl">
+              {t('subtitle')}
+            </p>
+          </div>
+        </ScrollReveal>
 
         {/* Core Values */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">

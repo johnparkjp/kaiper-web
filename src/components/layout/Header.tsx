@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { motion } from 'framer-motion';
 import { useTranslations, useLocale } from 'next-intl';
 import { useRouter, usePathname, Link } from '@/i18n/navigation';
 import Image from 'next/image';
@@ -134,11 +133,7 @@ export default function Header() {
         >
           {t(link.key)}
           {!mobile && isActive ? (
-            <motion.span
-              layoutId="nav-dot"
-              className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-accent-blue"
-              transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-            />
+            <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-accent-blue transition-all duration-300" />
           ) : null}
         </a>
       );
@@ -192,11 +187,7 @@ export default function Header() {
               <Link href="/shop" className={shopDesktopClass}>
                 {t('shop')}
                 {shopIsActive ? (
-                  <motion.span
-                    layoutId="nav-dot"
-                    className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-accent-blue"
-                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                  />
+                  <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-accent-blue transition-all duration-300" />
                 ) : null}
               </Link>
             </nav>
@@ -219,17 +210,21 @@ export default function Header() {
                 aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
                 aria-expanded={mobileOpen}
               >
-                <motion.span
-                  className="absolute w-5 h-0.5 bg-kaiper-white"
-                  animate={mobileOpen ? { rotate: 45, y: 0 } : { rotate: 0, y: -4 }}
+                <span
+                  className="absolute w-5 h-0.5 bg-kaiper-white transition-all duration-300"
+                  style={{
+                    transform: mobileOpen ? 'rotate(45deg) translateY(0)' : 'rotate(0) translateY(-4px)',
+                  }}
                 />
-                <motion.span
-                  className="absolute w-5 h-0.5 bg-kaiper-white"
-                  animate={mobileOpen ? { opacity: 0 } : { opacity: 1 }}
+                <span
+                  className="absolute w-5 h-0.5 bg-kaiper-white transition-opacity duration-300"
+                  style={{ opacity: mobileOpen ? 0 : 1 }}
                 />
-                <motion.span
-                  className="absolute w-5 h-0.5 bg-kaiper-white"
-                  animate={mobileOpen ? { rotate: -45, y: 0 } : { rotate: 0, y: 4 }}
+                <span
+                  className="absolute w-5 h-0.5 bg-kaiper-white transition-all duration-300"
+                  style={{
+                    transform: mobileOpen ? 'rotate(-45deg) translateY(0)' : 'rotate(0) translateY(4px)',
+                  }}
                 />
               </button>
             </div>

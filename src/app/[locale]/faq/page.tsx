@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import FAQContent from '@/components/faq/FAQContent';
+import Breadcrumb from '@/components/ui/Breadcrumb';
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -21,6 +22,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function FAQPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const isKo = locale === 'ko';
 
-  return <FAQContent />;
+  return (
+    <>
+      <Breadcrumb items={[
+        { label: isKo ? '홈' : 'Home', href: '/' },
+        { label: 'FAQ' },
+      ]} />
+      <FAQContent />
+    </>
+  );
 }

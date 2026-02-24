@@ -1,18 +1,65 @@
 'use client';
 
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { useTranslations } from 'next-intl';
 
 const FAQ_KEYS = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6'] as const;
+
+function AccordionItem({
+  question,
+  answer,
+  isOpen,
+  onToggle,
+}: {
+  question: string;
+  answer: string;
+  isOpen: boolean;
+  onToggle: () => void;
+}) {
+  const contentRef = useRef<HTMLDivElement>(null);
+  const [height, setHeight] = useState(0);
+
+  useEffect(() => {
+    if (contentRef.current) {
+      setHeight(isOpen ? contentRef.current.scrollHeight : 0);
+    }
+  }, [isOpen]);
+
+  return (
+    <div className="border border-cool-gray-50/30 rounded-2xl overflow-hidden">
+      <button
+        onClick={onToggle}
+        className="w-full flex items-center justify-between p-6 text-left hover:bg-cool-gray-50/5 transition-colors"
+        aria-expanded={isOpen}
+      >
+        <span className="text-base font-semibold pr-4">{question}</span>
+        <span
+          className="text-cool-gray-30 text-xl shrink-0 transition-transform duration-200"
+          style={{ transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)' }}
+          aria-hidden="true"
+        >
+          +
+        </span>
+      </button>
+      <div
+        style={{ height, opacity: isOpen ? 1 : 0 }}
+        className="transition-all duration-250 overflow-hidden"
+      >
+        <div ref={contentRef}>
+          <p className="px-6 pb-6 text-cool-gray-30 leading-relaxed">{answer}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function FAQContent() {
   const t = useTranslations('faq');
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  const toggle = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+  const toggle = useCallback((index: number) => {
+    setOpenIndex((prev) => (prev === index ? null : index));
+  }, []);
 
   return (
     <section className="pt-32 pb-20 lg:pt-40 lg:pb-30">
@@ -29,47 +76,15 @@ export default function FAQContent() {
           </p>
 
           <div className="space-y-3">
-            {FAQ_KEYS.map((key, index) => {
-              const isOpen = openIndex === index;
-              return (
-                <div
-                  key={key}
-                  className="border border-cool-gray-50/30 rounded-2xl overflow-hidden"
-                >
-                  <button
-                    onClick={() => toggle(index)}
-                    className="w-full flex items-center justify-between p-6 text-left hover:bg-cool-gray-50/5 transition-colors"
-                    aria-expanded={isOpen}
-                  >
-                    <span className="text-base font-semibold pr-4">
-                      {t(`items.${key}.question`)}
-                    </span>
-                    <motion.span
-                      className="text-cool-gray-30 text-xl shrink-0"
-                      animate={{ rotate: isOpen ? 45 : 0 }}
-                      transition={{ duration: 0.2 }}
-                      aria-hidden="true"
-                    >
-                      +
-                    </motion.span>
-                  </button>
-                  <AnimatePresence>
-                    {isOpen && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.25 }}
-                      >
-                        <p className="px-6 pb-6 text-cool-gray-30 leading-relaxed">
-                          {t(`items.${key}.answer`)}
-                        </p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              );
-            })}
+            {FAQ_KEYS.map((key, index) => (
+              <AccordionItem
+                key={key}
+                question={t(`items.${key}.question`)}
+                answer={t(`items.${key}.answer`)}
+                isOpen={openIndex === index}
+                onToggle={() => toggle(index)}
+              />
+            ))}
           </div>
         </div>
       </div>

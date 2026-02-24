@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic';
 import { setRequestLocale } from 'next-intl/server';
 import ShopHero from '@/components/shop/ShopHero';
 import SectionDivider from '@/components/ui/SectionDivider';
+import Breadcrumb from '@/components/ui/Breadcrumb';
 
 const FanSection = dynamic(() => import('@/components/shop/FanSection'));
 const KitSection = dynamic(() => import('@/components/shop/KitSection'));
@@ -28,8 +29,14 @@ export default async function ShopPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
 
+  const isKo = locale === 'ko';
+
   return (
     <>
+      <Breadcrumb items={[
+        { label: isKo ? '홈' : 'Home', href: '/' },
+        { label: 'Shop' },
+      ]} />
       <ShopHero />
       <SectionDivider />
       <FanSection />

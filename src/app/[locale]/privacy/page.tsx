@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
+import Breadcrumb from '@/components/ui/Breadcrumb';
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -23,6 +24,11 @@ export default async function PrivacyPage({ params }: Props) {
   const isKo = locale === 'ko';
 
   return (
+    <>
+    <Breadcrumb items={[
+      { label: isKo ? '홈' : 'Home', href: '/' },
+      { label: isKo ? '개인정보처리방침' : 'Privacy Policy' },
+    ]} />
     <section className="min-h-screen bg-kaiper-black text-cool-gray-20 px-6 lg:px-8 py-24">
       <div className="mx-auto max-w-3xl">
         <h1 className="text-3xl font-bold mb-8">
@@ -90,5 +96,6 @@ export default async function PrivacyPage({ params }: Props) {
         </div>
       </div>
     </section>
+    </>
   );
 }

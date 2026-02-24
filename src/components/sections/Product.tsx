@@ -1,7 +1,5 @@
 'use client';
 
-import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import SpecCard from '@/components/ui/SpecCard';
@@ -11,15 +9,9 @@ const KIT_KEYS = ['sleeves', 'hoodie', 'icePack', 'wear'] as const;
 
 export default function Product() {
   const t = useTranslations('product');
-  const sectionRef = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start end', 'end start'],
-  });
-  const parallaxY = useTransform(scrollYProgress, [0, 1], [60, -60]);
 
   return (
-    <section id="product" ref={sectionRef} className="py-20 lg:py-30">
+    <section id="product" className="py-20 lg:py-30">
       <div className="mx-auto max-w-[1280px] px-6 lg:px-8">
         {/* Badge + Title */}
         <ScrollReveal>
@@ -40,12 +32,9 @@ export default function Product() {
 
         {/* 3in1 Waist Fan Hero */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-20">
-          {/* Image placeholder with parallax */}
+          {/* Image placeholder */}
           <ScrollReveal>
-            <motion.div
-              style={{ y: parallaxY }}
-              className="relative aspect-square bg-gradient-to-br from-cool-gray-50/20 to-cool-gray-50/5 rounded-3xl overflow-hidden flex items-center justify-center border border-cool-gray-50/20"
-            >
+            <div className="relative aspect-square bg-gradient-to-br from-cool-gray-50/20 to-cool-gray-50/5 rounded-3xl overflow-hidden flex items-center justify-center border border-cool-gray-50/20">
               <div className="text-center p-8">
                 <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-accent-blue/10 flex items-center justify-center">
                   <svg className="w-16 h-16 text-accent-blue" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
@@ -57,7 +46,7 @@ export default function Product() {
                 <p className="text-xl font-bold">{t('fan.name')}</p>
                 <p className="text-sm text-cool-gray-30 mt-2">{t('fan.tagline')}</p>
               </div>
-            </motion.div>
+            </div>
           </ScrollReveal>
 
           {/* Specs */}

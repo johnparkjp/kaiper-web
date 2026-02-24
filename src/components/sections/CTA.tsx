@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useCallback } from 'react';
-import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 
@@ -37,7 +36,6 @@ export default function CTA() {
       return;
     }
     setSubmitting(true);
-    // Simulate async submission
     setTimeout(() => {
       setSubmitted(true);
       setEmail('');
@@ -62,15 +60,13 @@ export default function CTA() {
 
           <ScrollReveal delay={0.2}>
             {submitted ? (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="p-6 border border-accent-green/30 rounded-2xl"
+              <div
+                className="p-6 border border-accent-green/30 rounded-2xl animate-fade-in"
                 role="status"
               >
                 <div className="text-accent-green text-2xl mb-2">&#10003;</div>
                 <p className="text-kaiper-white font-semibold">{t('success')}</p>
-              </motion.div>
+              </div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-3" noValidate>
                 <div className="flex flex-col sm:flex-row gap-3">
@@ -94,15 +90,13 @@ export default function CTA() {
                         : 'border-cool-gray-50/30 focus:border-accent-blue'
                     }`}
                   />
-                  <motion.button
+                  <button
                     type="submit"
                     disabled={submitting}
-                    className="px-8 py-3.5 bg-accent-blue text-kaiper-black font-semibold rounded-full hover:bg-accent-blue/90 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
-                    whileHover={submitting ? {} : { scale: 1.02 }}
-                    whileTap={submitting ? {} : { scale: 0.98 }}
+                    className="px-8 py-3.5 bg-accent-blue text-kaiper-black font-semibold rounded-full hover:bg-accent-blue/90 hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-60 disabled:cursor-not-allowed"
                   >
                     {submitting ? t('submitting') : t('button')}
-                  </motion.button>
+                  </button>
                 </div>
                 {error && (
                   <p id="cta-error" className="text-sm text-accent-orange" role="alert">
