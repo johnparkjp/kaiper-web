@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { motion, useInView, useReducedMotion } from 'framer-motion';
 
 type AnimatedCounterProps = {
   value: number;
@@ -19,15 +18,39 @@ export default function AnimatedCounter({
   className = '',
 }: AnimatedCounterProps) {
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
-  const reduced = useReducedMotion();
+  const [isInView, setIsInView] = useState(false);
   const finalDisplay = decimals > 0 ? value.toFixed(decimals) : Math.floor(value).toLocaleString();
-  const [display, setDisplay] = useState(reduced ? finalDisplay : '0');
+  const prefersReduced = useRef(false);
+  const [display, setDisplay] = useState('0');
 
+  // Check reduced motion + IntersectionObserver
   useEffect(() => {
-    if (!isInView || reduced) return;
+    prefersReduced.current = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced.current) {
+      setDisplay(finalDisplay);
+    }
 
-    const start = 0;
+    const el = ref.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.unobserve(el);
+        }
+      },
+      { rootMargin: '-100px' }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [finalDisplay]);
+
+  // Animate counting
+  useEffect(() => {
+    if (!isInView || prefersReduced.current) return;
+
     const end = value;
     const startTime = performance.now();
     const durationMs = duration * 1000;
@@ -36,7 +59,7 @@ export default function AnimatedCounter({
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / durationMs, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
-      const current = start + (end - start) * eased;
+      const current = end * eased;
 
       setDisplay(
         decimals > 0
@@ -50,27 +73,17 @@ export default function AnimatedCounter({
     }
 
     requestAnimationFrame(update);
-  }, [isInView, value, duration, decimals, reduced]);
-
-  if (reduced) {
-    return (
-      <span ref={ref} className={className}>
-        {finalDisplay}
-        {suffix}
-      </span>
-    );
-  }
+  }, [isInView, value, duration, decimals]);
 
   return (
-    <motion.span
-      ref={ref}
-      className={className}
-      initial={{ opacity: 0 }}
-      animate={isInView ? { opacity: 1 } : {}}
-      transition={{ duration: 0.3 }}
-    >
-      {display}
-      {suffix}
-    </motion.span>
+    <span ref={ref} className={`inline-block ${className}`}>
+      {/* Invisible placeholder to reserve width and prevent CLS */}
+      <span className="invisible block h-0 overflow-hidden" aria-hidden="true">
+        {finalDisplay}{suffix}
+      </span>
+      <span style={{ opacity: isInView || prefersReduced.current ? 1 : 0, transition: 'opacity 0.3s' }}>
+        {display}{suffix}
+      </span>
+    </span>
   );
 }

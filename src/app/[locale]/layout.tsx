@@ -6,6 +6,7 @@ import { routing } from '@/i18n/routing';
 import { Analytics } from '@vercel/analytics/next';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import BackToTop from '@/components/ui/BackToTop';
 
 type Props = {
   children: React.ReactNode;
@@ -78,6 +79,7 @@ export default async function LocaleLayout({ children, params }: Props) {
           <Header />
           <main id="main-content">{children}</main>
           <Footer />
+          <BackToTop />
         </NextIntlClientProvider>
         <Analytics />
       </body>

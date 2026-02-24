@@ -1,7 +1,3 @@
-'use client';
-
-import { motion, useReducedMotion } from 'framer-motion';
-
 type ButtonProps = {
   children: React.ReactNode;
   variant?: 'primary' | 'secondary' | 'outline';
@@ -34,24 +30,19 @@ export default function Button({
   onClick,
   className = '',
 }: ButtonProps) {
-  const reduced = useReducedMotion();
-  const classes = `inline-flex items-center justify-center font-semibold rounded-full transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-accent-blue focus-visible:outline-offset-2 ${variants[variant]} ${sizes[size]} ${className}`;
-
-  const motionProps = reduced
-    ? {}
-    : { whileHover: { scale: 1.02 }, whileTap: { scale: 0.98 } };
+  const classes = `inline-flex items-center justify-center font-semibold rounded-full transition-all duration-200 focus-visible:outline-2 focus-visible:outline-accent-blue focus-visible:outline-offset-2 hover:scale-[1.02] active:scale-[0.98] ${variants[variant]} ${sizes[size]} ${className}`;
 
   if (href) {
     return (
-      <motion.a href={href} className={classes} {...motionProps}>
+      <a href={href} className={classes}>
         {children}
-      </motion.a>
+      </a>
     );
   }
 
   return (
-    <motion.button onClick={onClick} className={classes} {...motionProps}>
+    <button onClick={onClick} className={classes}>
       {children}
-    </motion.button>
+    </button>
   );
 }
