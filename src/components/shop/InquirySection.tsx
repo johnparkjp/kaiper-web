@@ -9,7 +9,7 @@ export default function InquirySection() {
   const t = useTranslations('shop.inquiry');
 
   return (
-    <section className="py-16 lg:py-24">
+    <section className="py-20 lg:py-30">
       <div className="mx-auto max-w-[1280px] px-6 lg:px-8">
         <ScrollReveal>
           <div className="relative max-w-2xl mx-auto text-center p-10 lg:p-16 rounded-2xl border border-cool-gray-50/30 bg-gradient-to-br from-accent-blue/5 to-transparent">
@@ -17,7 +17,7 @@ export default function InquirySection() {
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-accent-blue/10 via-transparent to-accent-blue/5 pointer-events-none" />
 
             <div className="relative">
-              <h2 className="text-2xl lg:text-3xl font-bold mb-3">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3">
                 {t('title')}
               </h2>
               <p className="text-cool-gray-30 mb-8 max-w-md mx-auto">

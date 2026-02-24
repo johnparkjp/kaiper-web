@@ -2,6 +2,8 @@
 
 import { useTranslations } from 'next-intl';
 import ScrollReveal from '@/components/ui/ScrollReveal';
+import SpecCard from '@/components/ui/SpecCard';
+import FeatureCard from '@/components/ui/FeatureCard';
 
 const SPEC_KEYS = ['mode', 'battery', 'charging', 'control', 'weight', 'noise'] as const;
 const FEATURE_KEYS = ['versatile', 'durable', 'portable'] as const;
@@ -29,7 +31,7 @@ export default function FanSection() {
   const t = useTranslations('shop.fan');
 
   return (
-    <section className="py-16 lg:py-24">
+    <section className="py-20 lg:py-30">
       <div className="mx-auto max-w-[1280px] px-6 lg:px-8">
         <ScrollReveal>
           <span className="inline-block text-xs font-semibold tracking-[0.2em] text-accent-blue uppercase mb-4">
@@ -58,7 +60,7 @@ export default function FanSection() {
           {/* Details */}
           <div className="flex flex-col justify-center">
             <ScrollReveal delay={0.1}>
-              <h2 className="text-3xl lg:text-4xl font-bold mb-2">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2">
                 {t('name')}
               </h2>
             </ScrollReveal>
@@ -69,17 +71,13 @@ export default function FanSection() {
             </ScrollReveal>
 
             {/* 6 Spec Cards — 2x3 grid */}
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-4">
               {SPEC_KEYS.map((key, i) => (
                 <ScrollReveal key={key} delay={0.2 + i * 0.05}>
-                  <div className="p-4 border border-cool-gray-50/30 rounded-xl border-l-2 border-l-accent-blue/60">
-                    <p className="text-xs text-cool-gray-30 uppercase tracking-wider mb-1 font-medium">
-                      {t(`specs.${key}.label`)}
-                    </p>
-                    <p className="text-sm font-bold text-kaiper-white">
-                      {t(`specs.${key}.value`)}
-                    </p>
-                  </div>
+                  <SpecCard
+                    label={t(`specs.${key}.label`)}
+                    value={t(`specs.${key}.value`)}
+                  />
                 </ScrollReveal>
               ))}
             </div>
@@ -90,17 +88,11 @@ export default function FanSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
           {FEATURE_KEYS.map((key, i) => (
             <ScrollReveal key={key} delay={i * 0.1}>
-              <div className="p-8 border border-cool-gray-50/30 rounded-2xl hover:border-accent-blue/30 transition-colors duration-300">
-                <div className="text-accent-blue mb-5">
-                  {FEATURE_ICONS[key]}
-                </div>
-                <h3 className="text-lg font-semibold mb-2">
-                  {t(`features.${key}.title`)}
-                </h3>
-                <p className="text-cool-gray-30 text-sm leading-relaxed">
-                  {t(`features.${key}.description`)}
-                </p>
-              </div>
+              <FeatureCard
+                icon={FEATURE_ICONS[key]}
+                title={t(`features.${key}.title`)}
+                description={t(`features.${key}.description`)}
+              />
             </ScrollReveal>
           ))}
         </div>

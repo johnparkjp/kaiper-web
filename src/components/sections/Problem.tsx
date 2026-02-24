@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import AnimatedCounter from '@/components/ui/AnimatedCounter';
+import FeatureCard from '@/components/ui/FeatureCard';
 
 const STAT_KEYS = ['heatDays', 'heatstroke', 'workers'] as const;
 const CARD_KEYS = ['crisis', 'vulnerability', 'gap'] as const;
@@ -75,17 +76,11 @@ export default function Problem() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {CARD_KEYS.map((key, i) => (
             <ScrollReveal key={key} delay={i * 0.15}>
-              <div className="group p-8 border border-cool-gray-50/30 rounded-2xl hover:border-accent-blue/30 transition-colors duration-300 h-full">
-                <div className="text-accent-blue mb-5">
-                  {CARD_ICONS[key]}
-                </div>
-                <h3 className="text-xl font-semibold mb-3">
-                  {t(`cards.${key}.title`)}
-                </h3>
-                <p className="text-cool-gray-30 text-sm leading-relaxed">
-                  {t(`cards.${key}.description`)}
-                </p>
-              </div>
+              <FeatureCard
+                icon={CARD_ICONS[key]}
+                title={t(`cards.${key}.title`)}
+                description={t(`cards.${key}.description`)}
+              />
             </ScrollReveal>
           ))}
         </div>

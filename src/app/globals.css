@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+/* Ensure font-display: swap for Pretendard to prevent FOIT */
+@font-face {
+  font-family: "Pretendard Variable";
+  font-display: swap;
+  src: local("Pretendard Variable");
+}
+
 @theme inline {
   --color-kaiper-black: #000000;
   --color-kaiper-white: #ffffff;

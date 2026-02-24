@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import ScrollReveal from '@/components/ui/ScrollReveal';
+import FeatureCard from '@/components/ui/FeatureCard';
 
 const VALUE_KEYS = ['optimize', 'synchronize', 'mobilize'] as const;
 
@@ -74,17 +75,11 @@ export default function Vision() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
           {VALUE_KEYS.map((key, i) => (
             <ScrollReveal key={key} delay={i * 0.15}>
-              <div className="p-8 border border-cool-gray-50/30 rounded-2xl hover:border-accent-blue/30 transition-colors duration-300 h-full">
-                <div className="text-accent-blue mb-5">
-                  {VALUE_ICONS[key]}
-                </div>
-                <h3 className="text-xl font-semibold mb-3">
-                  {t(`values.${key}.title`)}
-                </h3>
-                <p className="text-cool-gray-30 text-sm leading-relaxed">
-                  {t(`values.${key}.description`)}
-                </p>
-              </div>
+              <FeatureCard
+                icon={VALUE_ICONS[key]}
+                title={t(`values.${key}.title`)}
+                description={t(`values.${key}.description`)}
+              />
             </ScrollReveal>
           ))}
         </div>

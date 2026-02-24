@@ -36,7 +36,7 @@ export default function KitSection() {
   const t = useTranslations('shop.kit');
 
   return (
-    <section className="py-16 lg:py-24">
+    <section className="py-20 lg:py-30">
       <div className="mx-auto max-w-[1280px] px-6 lg:px-8">
         <ScrollReveal>
           <span className="inline-block text-xs font-semibold tracking-[0.2em] text-accent-blue uppercase mb-4">
@@ -44,7 +44,7 @@ export default function KitSection() {
           </span>
         </ScrollReveal>
         <ScrollReveal delay={0.1}>
-          <h2 className="text-3xl lg:text-4xl font-bold mb-2">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2">
             {t('name')}
           </h2>
         </ScrollReveal>

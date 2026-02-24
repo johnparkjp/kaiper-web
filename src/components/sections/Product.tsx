@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import ScrollReveal from '@/components/ui/ScrollReveal';
+import SpecCard from '@/components/ui/SpecCard';
 
 const SPEC_KEYS = ['mode', 'battery', 'charging', 'control'] as const;
 const KIT_KEYS = ['sleeves', 'hoodie', 'icePack', 'wear'] as const;
@@ -75,14 +76,10 @@ export default function Product() {
             <div className="grid grid-cols-2 gap-4">
               {SPEC_KEYS.map((key, i) => (
                 <ScrollReveal key={key} delay={0.2 + i * 0.1}>
-                  <div className="p-5 border border-cool-gray-50/30 rounded-xl border-l-2 border-l-accent-blue/60">
-                    <p className="text-xs text-cool-gray-30 uppercase tracking-wider mb-1.5 font-medium">
-                      {t(`fan.specs.${key}.label`)}
-                    </p>
-                    <p className="text-base font-bold text-kaiper-white">
-                      {t(`fan.specs.${key}.value`)}
-                    </p>
-                  </div>
+                  <SpecCard
+                    label={t(`fan.specs.${key}.label`)}
+                    value={t(`fan.specs.${key}.value`)}
+                  />
                 </ScrollReveal>
               ))}
             </div>

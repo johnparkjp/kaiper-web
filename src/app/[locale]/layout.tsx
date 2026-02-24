@@ -56,8 +56,13 @@ export default async function LocaleLayout({ children, params }: Props) {
     <html lang={locale} className="md:scroll-smooth">
       <head>
         <link
-          rel="stylesheet"
+          rel="preload"
           as="style"
+          crossOrigin="anonymous"
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+        />
+        <link
+          rel="stylesheet"
           crossOrigin="anonymous"
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
         />
