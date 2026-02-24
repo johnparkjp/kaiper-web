@@ -80,7 +80,7 @@ export default async function Image({ params }: { params: { locale: string } }) 
             }}
           />
           <div style={{ fontSize: 16, color: '#6a6e77', letterSpacing: '0.1em' }}>
-            kaiper.co.kr
+            kaiper.io
           </div>
         </div>
       </div>

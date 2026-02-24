@@ -17,7 +17,7 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://kaiper.co.kr';
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://kaiper.io';
 
 export async function generateMetadata({
   params,
