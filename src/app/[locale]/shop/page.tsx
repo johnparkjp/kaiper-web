@@ -4,6 +4,8 @@ import { setRequestLocale } from 'next-intl/server';
 import ShopHero from '@/components/shop/ShopHero';
 import SectionDivider from '@/components/ui/SectionDivider';
 import Breadcrumb from '@/components/ui/Breadcrumb';
+import JsonLd from '@/components/seo/JsonLd';
+import { getProductJsonLd } from '@/lib/jsonld';
 
 const FanSection = dynamic(() => import('@/components/shop/FanSection'));
 const KitSection = dynamic(() => import('@/components/shop/KitSection'));
@@ -33,6 +35,7 @@ export default async function ShopPage({ params }: Props) {
 
   return (
     <>
+      <JsonLd data={getProductJsonLd(locale)} />
       <Breadcrumb items={[
         { label: isKo ? '홈' : 'Home', href: '/' },
         { label: 'Shop' },

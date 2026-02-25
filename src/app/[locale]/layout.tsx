@@ -7,6 +7,8 @@ import { Analytics } from '@vercel/analytics/next';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import BackToTop from '@/components/ui/BackToTop';
+import JsonLd from '@/components/seo/JsonLd';
+import { getOrganizationJsonLd, getWebSiteJsonLd } from '@/lib/jsonld';
 
 type Props = {
   children: React.ReactNode;
@@ -89,6 +91,8 @@ export default async function LocaleLayout({ children, params }: Props) {
         />
       </head>
       <body className="bg-kaiper-black text-kaiper-white antialiased">
+        <JsonLd data={getOrganizationJsonLd(locale)} />
+        <JsonLd data={getWebSiteJsonLd(locale)} />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-accent-blue focus:text-kaiper-black focus:rounded-lg focus:font-semibold focus:text-sm"
